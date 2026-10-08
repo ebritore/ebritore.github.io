@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emilia Brito</title>
+<meta name="description" content="Emilia Brito, economist. Postdoctoral Scholar at the California Center for Population Research, UCLA. Labor, health, and gender economics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: Vivalt-style hero (headline + bio + photo), then Denning-style single-column paper list; one tinted band for the job market paper. */
+:root {
+  --bg: #ffffff;
+  --band: #f3f6f7;
+  --fg: #1c2326;
+  --muted: #5d6a70;
+  --rule: #dfe5e8;
+  --accent: #1d5f74;
+  --accent-soft: #e3eef2;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap: 50rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171a; --band: #192125; --fg: #e6ecee; --muted: #9aa9af;
+    --rule: #2a353a; --accent: #7fc0d4; --accent-soft: #1d3038; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171a; --band: #192125; --fg: #e6ecee; --muted: #9aa9af;
+  --rule: #2a353a; --accent: #7fc0d4; --accent-soft: #1d3038; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 1rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 1.25rem; }
+
+/* Header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--bg); border-bottom: 1px solid var(--rule);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.4rem; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-size: 1.7rem; font-weight: 500; color: var(--fg); }
+.brand:hover { text-decoration: none; }
+nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+nav a { font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: 1fr 9.5rem; gap: 3rem; align-items: start; padding-block: 3rem 3rem; }
+.hero .text { min-width: 0; }
+.eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 1rem; }
+.hero h1 {
+  font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 4.6vw, 2.9rem);
+  line-height: 1.12; letter-spacing: -.01em; margin: 0 0 1.5rem; text-wrap: balance;
+}
+.hero h1 em { color: var(--accent); }
+.hero p { margin: 0 0 1rem; max-width: 36rem; font-size: 1.05rem; }
+.contact { font-size: .9rem; color: var(--muted); margin-top: 1.5rem; display: grid; gap: .25rem; }
+.contact .links { display: flex; gap: .4rem; flex-wrap: wrap; }
+.contact .links span[aria-hidden] { color: var(--rule); }
+.photo {
+  width: 100%; max-width: 100%; height: auto; aspect-ratio: 835 / 910; object-fit: cover;
+  border-radius: 4px; background: var(--band); display: block;
+}
+.affil { border-top: 1px solid var(--rule); margin-top: 1.5rem; padding-top: 1rem; font-size: .82rem; color: var(--muted); }
+
+/* Sections */
+section { padding-block: 3.25rem; }
+section.band { background: var(--band); }
+h2 {
+  font-family: var(--display); font-weight: 400; font-size: 1.85rem; margin: 0 0 .25rem; letter-spacing: -.005em;
+}
+.sub { color: var(--muted); font-size: .92rem; margin: 0 0 2rem; }
+h3 {
+  font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin: 2.5rem 0 0; padding-bottom: .6rem;
+}
+h3:first-of-type { margin-top: 0; }
+h2 + h3 { margin-top: 1.75rem; }
+
+/* Job market paper */
+.jmp { display: grid; gap: .6rem; }
+.jmp .label {
+  justify-self: start; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); padding: .25rem .6rem; border-radius: 2px;
+}
+.jmp .title { font-family: var(--display); font-size: 1.55rem; line-height: 1.25; margin: .25rem 0 0; text-wrap: balance; }
+.jmp .title a { color: var(--fg); }
+.jmp .title a:hover { color: var(--accent); }
+.jmp .abstract { max-width: 42rem; margin: .5rem 0 0; }
+
+/* Paper list */
+.papers { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.paper { padding-block: 1.15rem; border-bottom: 1px solid var(--rule); display: grid; gap: .2rem; }
+.paper .title { font-family: var(--display); font-size: 1.2rem; line-height: 1.3; margin: 0; text-wrap: balance; }
+.paper .title a { color: var(--fg); }
+.paper .title a:hover { color: var(--accent); }
+.byline { font-size: .9rem; color: var(--muted); }
+.status { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--accent); }
+.byline .status { display: block; margin-top: .1rem; }
+.linkrow { display: flex; flex-wrap: wrap; gap: .15rem .9rem; font-size: .82rem; margin-top: .2rem; }
+.linkrow a, .linkrow summary { color: var(--accent); }
+.cov { color: var(--muted); }
+.tag {
+  display: inline-block; vertical-align: .2em; margin-left: .5rem; font-family: var(--body); font-size: .66rem; font-weight: 600;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: .12rem .45rem; border-radius: 2px;
+}
+details { font-size: .82rem; }
+details > summary { cursor: pointer; list-style: none; color: var(--accent); display: inline; }
+details > summary::-webkit-details-marker { display: none; }
+details > summary::after { content: " +"; }
+details[open] > summary::after { content: " –"; }
+details .abs { font-size: .92rem; color: var(--fg); max-width: 42rem; margin: .6rem 0 .3rem; line-height: 1.6; }
+.paper .linkrow { align-items: baseline; }
+.paper details { flex-basis: 100%; }
+.paper details:not([open]) { flex-basis: auto; }
+
+/* Teaching + references */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.rows li { display: flex; justify-content: space-between; gap: 1rem; padding-block: .75rem; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+.rows .what { min-width: 0; }
+.rows .when { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.rows .who { display: block; color: var(--muted); font-size: .88rem; }
+.refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.ref { font-size: .9rem; color: var(--muted); }
+.ref strong { display: block; font-family: var(--display); font-weight: 500; font-size: 1.1rem; color: var(--fg); }
+
+footer { border-top: 1px solid var(--rule); }
+footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 1.75rem; font-size: .85rem; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 2rem; padding-block: 2.5rem 2rem; }
+  .photo { max-width: 9rem; order: -1; }
+  .refs { grid-template-columns: 1fr; }
+  nav ul { gap: .9rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Emilia Brito</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="cv_emilia_brito.pdf">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div class="text">
+      <p>I am a Postdoctoral Scholar at the <a href="https://ccpr.ucla.edu">California Center for Population Research</a> at UCLA. I received my PhD in Economics from Brown University in 2024. I am an applied microeconomist working at the intersection of labor, health, and gender economics.</p>
+      <p>I am on the 2026–2027 academic job market.</p>
+      <div class="contact">
+        <span>ebritore@ucla.edu</span>
+        <span class="links">
+          <a href="cv_emilia_brito.pdf">CV</a>
+        </span>
+      </div>
+    </div>
+    <img class="photo" src="photo.jpg" alt="Portrait of Emilia Brito" width="835" height="910">
+  </div>
+</div>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+
+    <h3>Publications</h3>
+    <ul class="papers">
+      <li class="paper">
+        <p class="title"><a href="https://drive.google.com/file/d/1aDOcIVEYcB_DKlWYm4ct62_JEkAzsF26/view">Does Increasing Financial Access to Contraception in the U.S. Reduce Unintended Pregnancies? Evidence from the M-CARES Randomized Controlled Trial at Two Years</a></p>
+        <div class="byline">with Martha Bailey, Deniz Gorgulu, Kelsey Figone, Vanessa Wanner Lang, Alexa Prettyman, and Vanessa Dalton<span class="status">American Economic Review: Insights, forthcoming</span></div>
+        <div class="linkrow">
+          <a href="https://drive.google.com/file/d/1kDme_qKdITgaU-7Do4rcEeP2lBUXTVfB/view">Online Appendix</a>
+          <a href="https://www.nber.org/papers/w34400">NBER Working Paper</a>
+          <span class="cov">Coverage: <a href="https://www.nytimes.com/2026/01/03/opinion/health-care-medicaid-cuts.html">The New York Times</a></span>
+        </div>
+      </li>
+      <li class="paper">
+        <p class="title"><a href="https://doi.org/10.1162/rest_a_01412">Dynamic Impacts of Lockdown on Domestic Violence: Evidence from Multiple Policy Shifts in Chile</a></p>
+        <div class="byline">with Sonia Bhalotra, Damian Clarke, Pilar Larroulet, and <a href="http://www.franciscopino.com/Site/Home.html">Francisco Pino</a><span class="status">The Review of Economics and Statistics, 2026, 108(2)</span></div>
+        <div class="linkrow">
+          <a href="https://doi.org/10.1162/rest_a_01412">Published Version</a>
+          <a href="https://voxdev.org/topic/health/lockdowns-domestic-violence-and-decline-reporting">VoxDev Column</a>
+          <span class="cov">Coverage: <a href="https://www.ciperchile.cl/2021/03/09/violencia-contra-la-mujer-en-la-cuarentena-denuncias-bajaron-96-y-llamadas-de-auxilio-aumentaron-438/">CIPER Chile</a></span>
+          <details><summary>Abstract</summary><p class="abs">We identify dynamic impacts on domestic violence (DV) of the staggered imposition and lifting of lockdown across Chile’s 346 municipalities. Lockdown increases DV helpline calls and shelter occupancy without increasing DV police reports. These results are consistent with lockdown raising incidence and creating barriers to reporting. Once lockdown is lifted, shelter occupancy falls and police reports surge, but helpline calls remain elevated in line with state dependence in DV. We identify male job loss as a mechanism driving DV. Our findings accentuate controversy around welfare impacts of lockdown mandates. Adverse impacts of lockdown on DV are mitigated by cash transfers.</p></details>
+        </div>
+      </li>
+      <li class="paper">
+        <p class="title"><a href="https://doi.org/10.1007/s10896-026-01104-2">Studying Changes in Intimate Partner Violence in Latin America: A Brief Report from a Panel Survey During COVID-19</a></p>
+        <div class="byline">with Pilar Larroulet, Francisco Pino, Damian Clarke, and Sonia Bhalotra<span class="status">Journal of Family Violence, 2026</span></div>
+        <div class="linkrow">
+          <a href="https://doi.org/10.1007/s10896-026-01104-2">Published Version</a>
+          <details><summary>Abstract</summary><p class="abs">Intimate partner violence (IPV) is a significant public health problem in Latin America. However, understanding the scope and dynamics of IPV has been limited by a reliance on administrative or cross-sectional data. This limitation became especially problematic during the COVID-19 pandemic, as mobility restrictions impacted the likelihood of reporting. Drawing on a new panel database, this brief report examines changes in IPV during the COVID-19 pandemic in Chile and discusses the characteristics of these data, along with the challenges associated with data collection. Despite stable aggregate trends, IPV during the pandemic in Chile showed significant heterogeneity in individual-level transitions and a sharp decline in formal reporting, underscoring the value of longitudinal survey data for capturing these dynamics.</p></details>
+        </div>
+      </li>
+    </ul>
+
+    <h3>Working Papers</h3>
+    <ul class="papers">
+      <li class="paper">
+        <p class="title"><a href="papers/brito_contreras_caregiving_penalty.pdf">The Caregiving Penalty: Caring for Sick Parents and the Gender Pay Gap</a></p>
+        <div class="byline">with Dante Contreras</div>
+        <div class="linkrow">
+          <a href="papers/brito_contreras_caregiving_penalty.pdf">Paper (October 2025)</a>
+          <details><summary>Abstract</summary><p class="abs">The aging of the population is increasing the demand for adult caregiving. In most of the world, care for the elderly and sick is provided almost exclusively by families and, within families, by women. This paper studies the impact of adult caregiving on gender inequality in the labor market. Using administrative data from Chile, we leverage variation in a parental health shock—the first cancer hospitalization of a parent—to examine who bears the burden of adult caregiving. After a parental health shock, daughters but not sons experience a reduction in employment and earnings. A parental health shock creates a caregiving penalty—the effect of the shock on daughters relative to sons—of 11% on earnings, increasing the overall gender pay gap by 9%. These penalties affect women even if they earn more than their partners or brothers, suggesting that gender norms influence the distribution of adult caregiving. Additionally, penalties are concentrated among women who are mothers, suggesting a correlation across the life cycle between care given to children and then to aging parents.</p></details>
+        </div>
+      </li>
+      <li class="paper">
+        <p class="title"><a href="https://www.nber.org/papers/w33341">Can Coaching Parents of Children with Special Needs Reduce Future Child Maltreatment? Evidence from the Federal Early Intervention Program (IDEA Part C)</a></p>
+        <div class="byline">with <a href="https://sites.google.com/brown.edu/annaaizer/">Anna Aizer</a><span class="status">Revise &amp; Resubmit, The Review of Economics and Statistics</span></div>
+        <div class="linkrow">
+          <a href="https://www.nber.org/papers/w33341">NBER Working Paper 33341</a>
+          <span class="cov">Coverage: <a href="https://www.nber.org/digest/202504/vulnerable-children-and-federal-early-intervention-program">NBER Digest</a></span>
+          <details><summary>Abstract</summary><p class="abs">Children with a disability are 3.5 times more likely to be maltreated. Federal Early Intervention (EI) serves 426,000 children 0-3 with a disability, 3.7% of the entire population under three. EI’s objective is to support families in caring for their children’s special needs. Compared to children evaluated but ineligible for EI, children receiving EI in the first year of life are 3.3 percentage points less likely to be maltreated later in life, a decline of 45%, with smaller effects for those receiving services later. Targeting at-risk children, intervening early, and engaging with families in a cooperative manner effectively reduces future maltreatment.</p></details>
+        </div>
+      </li>
+      <li class="paper">
+        <p class="title"><a href="https://www.nber.org/papers/w33223">Is there a Critical Mass? Gender Composition and Behavior in US City Councils</a></p>
+        <div class="byline">with <a href="https://www.jessebruhn.com/home">Jesse Bruhn</a>, <a href="https://www.theahowchoon.com/">Thea How-Choon</a>, and <a href="https://sites.google.com/view/eaweber">Anna Weber</a></div>
+        <div class="linkrow">
+          <a href="https://www.nber.org/papers/w33223">NBER Working Paper 33223</a>
+          <details><summary>Abstract</summary><p class="abs">How does gender composition influence individual and group behavior? To study this question empirically, we assembled a new, national sample of United States city council elections and digitized information from the minutes of over 40,000 city-council meetings. We find that replacing a male councilor with a female councilor results in a 25p.p. increase in the share of motions proposed by women. This is despite causing only a 20p.p. increase in the council female share. The discrepancy is driven, in part, by behavioral changes similar to those documented in laboratory-based studies of gender composition. When a lone woman is joined by a female colleague, she participates more actively by proposing more motions. The apparent changes in behavior do not translate into clear differences in spending. The null finding on spending is not driven by strategic voting; however, preference alignment on local policy issues between men and women appears to play an important role.</p></details>
+        </div>
+      </li>
+      <li class="paper">
+        <p class="title">The Intergenerational Cost of Parental Illness: Children’s School Engagement in Chile</p>
+        <div class="byline">with Nicolás Libuy and Dante Contreras<span class="status">IDB Working Paper, forthcoming</span></div>
+      </li>
+    </ul>
+
+    <h3>Work in Progress</h3>
+    <ul class="papers">
+      <li class="paper">
+        <p class="title">Who is Financially Constrained? How Out-of-Pocket Costs Shape Contraceptive Use, Pregnancy, and Childbirth</p>
+        <div class="byline">with Martha Bailey, Lexin Cai, and Giulia Olivero</div>
+      </li>
+      <li class="paper">
+        <p class="title">The Effects of Subsidizing Contraception on Educational and Labor Market Outcomes</p>
+        <div class="byline">with Martha Bailey, Lexin Cai, and Giulia Olivero</div>
+      </li>
+      <li class="paper">
+        <p class="title">Labor Market Returns to Graduate Degrees</p>
+        <div class="byline">with Dante Contreras and Isidora Palma</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="teaching">
+  <div class="wrap">
+    <h2>Teaching</h2>
+    <p class="sub">Teaching assistant at Brown University and lecturer at Universidad de Chile.</p>
+    <h3>Brown University, Teaching Assistant</h3>
+    <ul class="rows">
+      <li><span class="what">Designing Internet Marketplaces<span class="who">Professor Bobby Pakzad-Hurson</span></span><span class="when">Fall 2022</span></li>
+      <li><span class="what">Applied Research Methods for Economists<span class="who">Professor Anna Aizer</span></span><span class="when">Fall 2019, Spring 2020</span></li>
+    </ul>
+    <h3>Universidad de Chile, Lecturer</h3>
+    <ul class="rows">
+      <li><span class="what">Applied Econometrics – Stata Lab</span><span class="when">Fall 2016, Spring 2017</span></li>
+      <li><span class="what">Intermediate Microeconomics</span><span class="when">Summer, Spring 2017</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Emilia Brito · ebritore@ucla.edu</span>
+    <span>Updated October 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
